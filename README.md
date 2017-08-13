@@ -17,3 +17,4 @@ The second one is a "tape calculator" at `http://localhost:8080/calculator.js` a
 For extra fun, use a "duplicate page" (or "tab" or "window") functionality of your web browser midway through playing with any example and see how it seamlessly forks the execution of the flow!
 After that, use the browser back button to go back in one of the executions, then do something in the other, and see how they remain entirely independent.
 
+For a more exhaustive tutorial walking you through the mechanics of the calculator example and explaining advanced concepts, please see the [Tutorial](https://github.com/szegedi/spring-web-jsflow-example/wiki/Tutorial).
