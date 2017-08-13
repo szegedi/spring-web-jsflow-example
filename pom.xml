@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+   Copyright Attila Szegedi
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ 
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.szegedi</groupId>
+  <artifactId>spring-webmvc-jsflow-example</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>JSFlow for Spring Web MVC - Example</name>
+ 
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <scm>
+    <connection>scm:git:git@github.com:szegedi/spring-webmvc-jsflow-example.git</connection>
+    <developerConnection>scm:git:git@github.com:szegedi/spring-webmvc-jsflow-example.git</developerConnection>
+    <url>git@github.com:szegedi/spring-webmvc-jsflow-example.git</url>
+  </scm>
+
+  <organization>
+    <name>Attila Szegedi</name>
+    <url>https://github.com/szegedi</url>
+  </organization>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.4.6.v20170531</version>
+      </plugin>
+    </plugins>  
+  </build>
+
+  <dependencies>
+    <!-- The actual JSFlow -->
+    <dependency>
+      <groupId>org.szegedi</groupId>
+      <artifactId>spring-webmvc-jsflow</artifactId>
+      <version>1.3</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- We use FreeMarker as a template engine for HTML view rendering -->
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.26-incubating</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!--
+      Additional runtime-only Spring component needed to launch the
+      Spring dispatcher servlet and parse its *-servlet.xml. JSFlow 
+      itself doesn't depend on these, so the example can't inherit them
+      through it. (It inherits plenty of others.)
+    -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>4.3.10.RELEASE</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>4.3.10.RELEASE</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>4.3.10.RELEASE</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
