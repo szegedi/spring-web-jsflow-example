@@ -2,11 +2,17 @@
 
 This is an example web application demonstrating use of [JSFlow for Spring Web MVC](https://github.com/szegedi/spring-web-jsflow)
 
-To get started with it, clone this repository, make sure you have Maven installed, and then from command line issue:
+To get started with it, clone this repository as well as JSFlow itself and make sure you have Maven installed. From command line first build JSFlow from its directory and install it locally using
+```
+mvn install
+```
+Then from the directory for this project, issue:
 ```
 mvn jetty:run
 ```
-To launch the webapp in a Jetty web server instance at `localhost:8080`. Note that currently this does *not* work with a Java version later than 8.
+To launch the webapp in a Jetty web server instance at `localhost:8080`.
+
+Note that currently you will have to use Java 8 for both building JSFlow and for running this example. There are JavaDoc and servlet API incompatibilities at the moment that make these projects difficult to build and operate on later Java versions.
 
 There are two examples. The first one is a sample checkout process at `http://localhost:8080/checkout.js` that gathers a shipping and billing address with server-side input validation. 
 Address-gathering is implemented as a JavaScript function that simply loops until input data is valid. The main flow invokes the 
