@@ -6,7 +6,7 @@ To get started with it, clone this repository, make sure you have Maven installe
 ```
 mvn jetty:run
 ```
-To launch the webapp in a Jetty web server instance at `localhost:8080`.
+To launch the webapp in a Jetty web server instance at `localhost:8080`. Note that currently this does *not* work with a Java version later than 8.
 
 There are two examples. The first one is a sample checkout process at `http://localhost:8080/checkout.js` that gathers a shipping and billing address with server-side input validation. 
 Address-gathering is implemented as a JavaScript function that simply loops until input data is valid. The main flow invokes the 
